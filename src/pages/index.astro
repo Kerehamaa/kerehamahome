@@ -1,0 +1,127 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const nowItems = [
+  {
+    label: 'School',
+    title: 'Year 11 · Te Ao Māori | High Performance Sport | Christian Studies',
+    body:
+      'Balancing culture, sport science, and faith studies while dialling in habits that keep grades and training on track.',
+  },
+  {
+    label: 'Courtside',
+    title: 'Referee · Tauranga City Basketball',
+    body:
+      'Officiating junior and senior fixtures each week, staying calm under pressure and keeping the pace honest.',
+  },
+  {
+    label: 'Focus',
+    title: 'Building a home for everything I make',
+    body:
+      'This site links out to my portfolio, experiments, and future posts so people can follow what I’m putting into the world.',
+  },
+];
+
+const spaces = [
+  {
+    label: 'Live now',
+    title: 'portfolio.kerehama.nz',
+    body: 'Signature projects, highlights, and anything I’m proud to show off.',
+    href: 'https://portfolio.kerehama.nz',
+  },
+  {
+    label: 'In progress',
+    title: 'lab.kerehama.nz',
+    body: 'Experiments, prototypes, and sports tech ideas while they’re still messy.',
+    href: 'https://lab.kerehama.nz',
+  },
+  {
+    label: 'Coming soon',
+    title: 'notes.kerehama.nz',
+    body: 'Short posts on school, refereeing, and whatever I’m learning next.',
+    href: 'https://notes.kerehama.nz',
+  },
+];
+
+const socials = [
+  {
+    label: 'Email',
+    title: 'kerehama@andrewstribe.co.nz',
+    href: 'mailto:kerehama@andrewstribe.co.nz',
+  },
+  {
+    label: 'Instagram',
+    title: '@kerehamaaa',
+    href: 'https://www.instagram.com/kerehamaaa',
+  },
+  {
+    label: 'TikTok',
+    title: '@itskerehama',
+    href: 'https://www.tiktok.com/@itskerehama',
+  },
+];
+---
+
+<BaseLayout title="kerehama.nz — Kerehama Andrews" description="Year 11 student, Tauranga City Basketball referee, and builder of things online.">
+  <section class="hero">
+    <div>
+      <p class="eyebrow">Kerehama Andrews</p>
+      <h1>Year 11 student & Tauranga City Basketball referee</h1>
+      <p class="lede">
+        Splitting time between Te Ao Māori, High Performance Sport, Christian Studies, and the whistle. This space keeps
+        everything I’m working on in one quiet place.
+      </p>
+    </div>
+    <div class="cta-row">
+      <a class="button primary" href="mailto:kerehama@andrewstribe.co.nz">Email me</a>
+      <a class="button secondary" href="#spaces">Explore my spaces</a>
+    </div>
+  </section>
+
+  <section id="now">
+    <header>
+      <p class="label">Right now</p>
+      <h2>What I’m focused on this term</h2>
+    </header>
+    <div class="list">
+      {nowItems.map((item) => (
+        <div class="list-item">
+          <span class="label">{item.label}</span>
+          <strong>{item.title}</strong>
+          <p>{item.body}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section id="spaces">
+    <header>
+      <p class="label">Spaces</p>
+      <h2>Subdomains for different parts of my work</h2>
+    </header>
+    <div class="card-grid two">
+      {spaces.map((link) => (
+        <a class="card" href={link.href} target="_blank" rel="noopener noreferrer">
+          <span class="label">{link.label}</span>
+          <h3>{link.title}</h3>
+          <p>{link.body}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section id="connect">
+    <header>
+      <p class="label">Connect</p>
+      <h2>Say kia ora</h2>
+    </header>
+    <div class="card-grid">
+      {socials.map((link) => (
+        <a class="card" href={link.href} target="_blank" rel="noopener noreferrer">
+          <span class="label">{link.label}</span>
+          <h3>{link.title}</h3>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
