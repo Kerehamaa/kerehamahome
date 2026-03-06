@@ -499,3 +499,40 @@ nav a.brand {
   color: var(--fg);
   box-shadow: 0 0 12px rgba(249, 115, 22, 0.3);
 }
+
+/* typing cursor on eyebrow */
+.hero .eyebrow::after {
+  content: '|';
+  animation: blink 1s step-end infinite;
+  margin-left: 0.15em;
+  color: var(--accent);
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* section dividers */
+section + section::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: var(--card-border);
+  margin-bottom: 1rem;
+}
+
+/* subtle text-decoration on card links */
+.card {
+  text-decoration: none;
+}
+
+/* connect card icons hint */
+.card h3 {
+  transition: color 0.2s ease;
+}
+
+.card:hover h3 {
+  color: var(--accent);
+}
