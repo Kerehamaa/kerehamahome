@@ -456,8 +456,8 @@ nav a.brand {
 .sun-icon {
   position: absolute;
   inset: 0;
-  opacity: 0;
-  transform: scale(0.8);
+  opacity: 1;
+  transform: scale(1);
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
@@ -496,8 +496,8 @@ nav a.brand {
 .moon-icon {
   position: absolute;
   inset: 0;
-  opacity: 1;
-  transform: scale(1);
+  opacity: 0;
+  transform: scale(0.8);
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
@@ -527,21 +527,21 @@ nav a.brand {
 
 /* Light mode states */
 :root[data-theme="light"] .sun-icon {
-  opacity: 1;
-  transform: scale(1);
-}
-
-:root[data-theme="light"] .moon-icon {
   opacity: 0;
   transform: scale(0.8);
 }
 
+:root[data-theme="light"] .moon-icon {
+  opacity: 1;
+  transform: scale(1);
+}
+
 :root[data-theme="light"] .ray {
-  transform: translate(-50%, -50%) rotate(calc(var(--i) * 45deg)) translateY(-12px) scale(1);
+  transform: translate(-50%, -50%) rotate(calc(var(--i) * 45deg)) translateY(-12px) scale(0);
 }
 
 :root[data-theme="light"] .sun-center {
-  transform: translate(-50%, -50%) scale(1.1);
+  transform: translate(-50%, -50%) scale(1);
 }
 
 /* Animation for moon expanding to sun */
