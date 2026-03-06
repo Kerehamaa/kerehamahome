@@ -28,7 +28,26 @@ const {
     <nav>
       <a href="/" class="brand">kerehama.nz</a>
       <div class="nav-controls">
-        <button class="theme-toggle" id="theme-toggle">🌙</button>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+          <div class="theme-icon">
+            <div class="sun-icon">
+              <div class="sun-center"></div>
+              <div class="sun-rays">
+                <div class="ray" style="--i: 0"></div>
+                <div class="ray" style="--i: 1"></div>
+                <div class="ray" style="--i: 2"></div>
+                <div class="ray" style="--i: 3"></div>
+                <div class="ray" style="--i: 4"></div>
+                <div class="ray" style="--i: 5"></div>
+                <div class="ray" style="--i: 6"></div>
+                <div class="ray" style="--i: 7"></div>
+              </div>
+            </div>
+            <div class="moon-icon">
+              <div class="moon-shape"></div>
+            </div>
+          </div>
+        </button>
         <div class="starmap-wrapper">
         <button class="starmap-toggle" aria-expanded="false" aria-controls="starmap-panel">Map</button>
         <div class="starmap" id="starmap-panel" aria-label="Site map">
@@ -93,22 +112,40 @@ const {
     </footer>
 
   <script>
-    // Theme toggle functionality
+    // Theme toggle functionality with animations
     const themeToggle = document.getElementById('theme-toggle');
     const root = document.documentElement;
     
     // Check for saved theme or default to dark
     const savedTheme = localStorage.getItem('theme') || 'dark';
     root.setAttribute('data-theme', savedTheme);
-    themeToggle.textContent = savedTheme === 'light' ? '🌙' : '☀️';
     
     themeToggle?.addEventListener('click', () => {
       const currentTheme = root.getAttribute('data-theme');
       const newTheme = currentTheme === 'light' ? 'dark' : 'light';
       
-      root.setAttribute('data-theme', newTheme);
+      // Add animation class based on transition direction
+      if (newTheme === 'light') {
+        // Moon → Sun: expanding animation
+        themeToggle.classList.add('expanding');
+        setTimeout(() => {
+          root.setAttribute('data-theme', newTheme);
+          setTimeout(() => {
+            themeToggle.classList.remove('expanding');
+          }, 400);
+        }, 100);
+      } else {
+        // Sun → Moon: contracting animation  
+        themeToggle.classList.add('contracting');
+        setTimeout(() => {
+          root.setAttribute('data-theme', newTheme);
+          setTimeout(() => {
+            themeToggle.classList.remove('contracting');
+          }, 400);
+        }, 200);
+      }
+      
       localStorage.setItem('theme', newTheme);
-      themeToggle.textContent = newTheme === 'light' ? '🌙' : '☀️';
     });
   </script>
   </body>
