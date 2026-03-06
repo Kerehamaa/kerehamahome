@@ -507,7 +507,7 @@ nav a.brand {
   left: 50%;
   width: 14px;
   height: 14px;
-  background: #ffffff;
+  background: #1a1a1a;
   border-radius: 50%;
   transform: translate(-50%, -50%);
   transition: transform 0.4s ease;
@@ -520,7 +520,7 @@ nav a.brand {
   left: 3px;
   width: 12px;
   height: 12px;
-  background: var(--bg);
+  background: #ffffff;
   border-radius: 50%;
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
