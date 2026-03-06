@@ -126,23 +126,32 @@ const {
       
       // Add animation class based on transition direction
       if (newTheme === 'light') {
-        // Moon → Sun: expanding animation
+        // 🌙 → 🌕 → ☀️: crescent → full moon → sun
         themeToggle.classList.add('expanding');
+        
+        // Step 1: Crescent becomes full moon (0.2s)
         setTimeout(() => {
+          // Step 2: Switch theme and show sun rays (0.3s)
           root.setAttribute('data-theme', newTheme);
+          
+          // Step 3: Clean up after full animation
           setTimeout(() => {
             themeToggle.classList.remove('expanding');
-          }, 400);
-        }, 100);
+          }, 500);
+        }, 200);
       } else {
-        // Sun → Moon: contracting animation  
+        // ☀️ → 🌕 → 🌙: sun → full moon → crescent
         themeToggle.classList.add('contracting');
+        
+        // Step 1: Rays retract, leaving full moon (0.3s)
         setTimeout(() => {
           root.setAttribute('data-theme', newTheme);
-          setTimeout(() => {
-            themeToggle.classList.remove('contracting');
-          }, 400);
-        }, 200);
+        }, 100);
+        
+        // Step 2: Full moon becomes crescent (after 0.3s delay)
+        setTimeout(() => {
+          themeToggle.classList.remove('contracting');
+        }, 600);
       }
       
       localStorage.setItem('theme', newTheme);
