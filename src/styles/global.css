@@ -252,20 +252,24 @@ nav span.status {
 
 
 .monogram {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 0.08em;
-  font-size: 2.4rem;
+  width: 80px;
+  height: 80px;
+  border-radius: 24px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.monogram span {
+  font-size: 2rem;
   font-weight: 600;
   letter-spacing: -0.05em;
 }
 
-.monogram span {
-  font-size: inherit;
-  font-weight: inherit;
-}
-
 .monogram span:last-child {
+  position: absolute;
+  transform: translate(8px, 10px);
   opacity: 0.65;
 }
 
@@ -281,10 +285,6 @@ nav span.status {
 .hero-mark span {
   letter-spacing: 0.2em;
   text-transform: uppercase;
-}
-
-.hero-mark .monogram {
-  font-size: 2.8rem;
 }
 
 @keyframes fade-up {
