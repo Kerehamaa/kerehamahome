@@ -124,6 +124,9 @@ const {
       const currentTheme = root.getAttribute('data-theme');
       const newTheme = currentTheme === 'light' ? 'dark' : 'light';
       
+      // Add smooth transition class to body
+      document.body.classList.add('theme-transitioning');
+      
       // Add animation class based on transition direction
       if (newTheme === 'light') {
         // ☀️ → 🌕 → 🌙: sun → full moon → crescent (dark to light)
@@ -137,6 +140,10 @@ const {
         // Step 2: Full moon becomes crescent (after 0.3s delay)
         setTimeout(() => {
           themeToggle.classList.remove('contracting');
+          // Remove transition class after animation
+          setTimeout(() => {
+            document.body.classList.remove('theme-transitioning');
+          }, 500);
         }, 600);
       } else {
         // 🌙 → 🌕 → ☀️: crescent → full moon → sun (light to dark)
@@ -150,6 +157,10 @@ const {
           // Step 3: Clean up after full animation
           setTimeout(() => {
             themeToggle.classList.remove('expanding');
+            // Remove transition class after animation
+            setTimeout(() => {
+              document.body.classList.remove('theme-transitioning');
+            }, 500);
           }, 500);
         }, 200);
       }

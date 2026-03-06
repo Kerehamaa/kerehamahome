@@ -483,7 +483,7 @@ nav a.brand {
   top: 50%;
   left: 50%;
   width: 2px;
-  height: 8px;
+  height: 7px;
   background: var(--fg);
   border-radius: 1px;
   transform-origin: center center;
@@ -588,4 +588,24 @@ nav a.brand {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+}
+
+/* Smooth theme transitions */
+body.theme-transitioning,
+body.theme-transitioning * {
+  transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease !important;
+}
+
+body.theme-transitioning::before {
+  transition: background 0.5s ease !important;
+}
+
+/* Smooth transitions for all theme-dependent colors */
+body, main, section, .card, .button, nav, footer {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Smooth background gradient transition */
+body::before {
+  transition: background 0.4s ease;
 }
