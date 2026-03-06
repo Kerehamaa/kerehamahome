@@ -6,8 +6,8 @@
   --bg-soft: #141617;
   --fg: #FFFFFF;
   --muted: #A9ACAF;
-  --accent: #FF6A2A;
-  --accent-soft: rgba(255, 106, 42, 0.12);
+  --accent: #06b6d4;
+  --accent-soft: rgba(6, 182, 212, 0.12);
   --card-border: rgba(255, 255, 255, 0.06);
 }
 
@@ -33,7 +33,7 @@ body::before {
   inset: -20% auto auto -25%;
   width: 60vw;
   height: 60vw;
-  background: radial-gradient(circle at 30% 30%, rgba(255, 106, 42, 0.25), transparent 70%);
+  background: radial-gradient(circle at 30% 30%, rgba(6, 182, 212, 0.25), transparent 70%);
   filter: blur(120px);
   opacity: 0.45;
   animation: float-pulse 18s ease-in-out infinite alternate;
