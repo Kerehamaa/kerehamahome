@@ -11,6 +11,10 @@
   --card-border: rgba(248, 247, 242, 0.08);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -261,7 +265,7 @@ nav span.status {
   place-items: center;
   position: relative;
   overflow: hidden;
-  background: radial-gradient(circle at 30% 30%, rgba(249, 115, 22, 0.3), transparent 70%);
+  background: transparent;
 }
 
 .monogram span {
