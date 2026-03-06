@@ -536,3 +536,78 @@ section + section::before {
 .card:hover h3 {
   color: var(--accent);
 }
+
+/* three-column grid for connect */
+@media (min-width: 720px) {
+  .card-grid.three {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.card--connect {
+  text-align: center;
+  align-items: center;
+}
+
+.card--connect h3 {
+  font-size: 1rem;
+  word-break: break-all;
+}
+
+/* mobile polish */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p.lede {
+    font-size: 1rem;
+  }
+
+  .starmap {
+    width: min(320px, 85vw);
+    right: -0.5rem;
+  }
+
+  .monogram {
+    width: 60px;
+    height: 60px;
+    border-radius: 18px;
+  }
+
+  .monogram span {
+    font-size: 1.6rem;
+  }
+}
+
+/* selection color */
+::selection {
+  background: rgba(249, 115, 22, 0.3);
+  color: var(--fg);
+}
+
+/* focus styles for accessibility */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--card-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}

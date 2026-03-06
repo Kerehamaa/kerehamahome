@@ -46,17 +46,20 @@ const spaces = [
 const socials = [
   {
     label: 'Email',
-    title: 'kerehama@andrewstribe.co.nz',
+    title: '✉️  kerehama@andrewstribe.co.nz',
+    icon: '✉️',
     href: 'mailto:kerehama@andrewstribe.co.nz',
   },
   {
     label: 'Instagram',
-    title: '@kerehamaaa',
+    title: '📸  @kerehamaaa',
+    icon: '📸',
     href: 'https://www.instagram.com/kerehamaaa',
   },
   {
     label: 'TikTok',
-    title: '@itskerehama',
+    title: '🎵  @itskerehama',
+    icon: '🎵',
     href: 'https://www.tiktok.com/@itskerehama',
   },
 ];
@@ -70,7 +73,6 @@ const socials = [
           <span>K</span>
           <span>A</span>
         </div>
-        <span>Home base</span>
       </div>
       <p class="eyebrow">Kerehama Andrews</p>
       <h1>Year 11 student & Tauranga City Basketball referee</h1>
@@ -122,9 +124,9 @@ const socials = [
       <p class="label">Connect</p>
       <h2>Say kia ora</h2>
     </header>
-    <div class="card-grid">
+    <div class="card-grid three">
       {socials.map((link) => (
-        <a class="card" href={link.href} target="_blank" rel="noopener noreferrer">
+        <a class="card card--connect" href={link.href} target="_blank" rel="noopener noreferrer">
           <span class="label">{link.label}</span>
           <h3>{link.title}</h3>
         </a>
