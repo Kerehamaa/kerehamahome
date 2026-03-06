@@ -63,27 +63,196 @@ const socials = [
     href: 'https://www.tiktok.com/@itskerehama',
   },
 ];
+
+const heroHighlights = [
+  {
+    label: 'Kaupapa',
+    title: 'Whakatipu i te wairua',
+    body: 'Placeholder copy about grounding projects in whakapapa and keeping the mahi steady.',
+  },
+  {
+    label: 'Mauri',
+    title: 'Energy for the next build',
+    body: 'Holding space for new experiments while studies, refereeing, and whanau stay balanced.',
+  },
+  {
+    label: 'Waka',
+    title: 'Sport · Tech · Story',
+    body: 'Mapping out where code, training plans, and storytelling can meet later this year.',
+  },
+];
+
+const portfolioItems = [
+  {
+    title: 'Mahi 01 · Marae Systems',
+    body: 'Concept screens for a whānau booking system with layers of tikanga baked in.',
+  },
+  {
+    title: 'Mahi 02 · Court Tech',
+    body: 'Shot-tracking dashboard tying refereeing data to training blocks and performance reviews.',
+  },
+  {
+    title: 'Mahi 03 · Kāinga Build',
+    body: 'Placeholder visuals for a business site telling our kaupapa, services, and whakapapa.',
+  },
+  {
+    title: 'Mahi 04 · Te Reo App',
+    body: 'Micro interactions for a reo-learning companion focused on Tauranga Moana stories.',
+  },
+  {
+    title: 'Mahi 05 · Uniform Drop',
+    body: 'Lookbook layout for custom kit blends inspired by pounamu, harakeke, and kōkōwai.',
+  },
+  {
+    title: 'Mahi 06 · Whānau HQ',
+    body: 'Dashboard wireframes connecting business, sport, and kura calendars in one view.',
+  },
+];
 ---
 
 <BaseLayout title="kerehama.nz — Kerehama Andrews" description="Year 11 student, Tauranga City Basketball referee, and builder of things online.">
-  <section class="hero">
-    <div>
-      <div class="hero-mark" aria-hidden="true">
-        <div class="monogram">
-          <span>K</span>
-          <span>A</span>
+  <section
+    id="hero"
+    aria-labelledby="hero-heading"
+    class="relative block isolate overflow-hidden rounded-[32px] border border-white/10 bg-[#040302] px-6 py-12 shadow-koru sm:px-10 sm:py-16 lg:px-16"
+  >
+    <div class="pointer-events-none absolute inset-0 opacity-90">
+      <div class="absolute inset-0 bg-gradient-to-br from-[#20160f] via-[#0e1a16] to-[#030302]"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_25%,rgba(250,204,21,0.25),transparent_55%)]"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_80%_30%,rgba(34,197,94,0.2),transparent_40%)]"></div>
+      <svg viewBox="0 0 400 400" class="absolute -right-16 -top-12 h-80 w-80 text-white/5" aria-hidden="true">
+        <defs>
+          <pattern id="koru" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M0 40 Q20 0 40 40" fill="none" stroke="currentColor" stroke-width="1.25" opacity="0.6" />
+            <path d="M0 0 Q20 40 40 0" fill="none" stroke="currentColor" stroke-width="1.25" opacity="0.35" />
+          </pattern>
+        </defs>
+        <rect width="400" height="400" fill="url(#koru)" />
+      </svg>
+    </div>
+
+    <div class="relative flex flex-col gap-10 lg:flex-row lg:items-center">
+      <div class="flex-1 space-y-8 text-white">
+        <div class="flex flex-col gap-4 text-xs uppercase tracking-[0.45em] text-amber-100/80 sm:flex-row sm:items-center sm:justify-between">
+          <div class="flex items-center gap-4">
+            <div class="flex h-16 w-16 items-center justify-center rounded-2xl border border-white/25 bg-black/40 text-[0.6rem] font-semibold">
+              LOGO
+            </div>
+            <span>KEREHAMA</span>
+          </div>
+          <span class="text-lime-100/70">Placeholder kaupapa</span>
+        </div>
+
+        <p class="text-sm font-semibold uppercase tracking-[0.4em] text-lime-100/70">Te Ao Māori · Tauranga Moana</p>
+        <h1 id="hero-heading" class="text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl">
+          Holding space for future builds with a dark, grounded palette inspired by whenua and pounamu.
+        </h1>
+        <p class="text-base text-amber-50/85 sm:text-lg">
+          Placeholder copy for the hero lede — a note about weaving school, sport, and creative experiments together. The
+          final copy will speak to whakapapa, whānau, and the mahi that’s still forming.
+        </p>
+
+        <div class="flex flex-col gap-3 sm:flex-row">
+          <a
+            href="#connect"
+            class="inline-flex items-center justify-center rounded-full bg-amber-400 px-6 py-3 text-sm font-semibold uppercase tracking-[0.35em] text-slate-900 transition hover:bg-amber-300"
+            >Whakapā mai</a
+          >
+          <a
+            href="#spaces"
+            class="inline-flex items-center justify-center rounded-full border border-white/30 px-6 py-3 text-sm font-semibold uppercase tracking-[0.35em] text-amber-100/80 transition hover:border-amber-200 hover:text-white"
+            >See the map</a
+          >
         </div>
       </div>
-      <p class="eyebrow">Kerehama Andrews</p>
-      <h1>Year 11 student & Tauranga City Basketball referee</h1>
-      <p class="lede">
-        Splitting time between Te Ao Māori, High Performance Sport, Christian Studies, and the whistle. This space keeps
-        everything I’m working on in one quiet place.
-      </p>
+
+      <div class="flex-1 space-y-6 rounded-[28px] border border-white/10 bg-white/5 p-6 text-white/90 shadow-2xl backdrop-blur">
+        <p class="text-xs font-semibold uppercase tracking-[0.45em] text-amber-100/70">Hero wānanga</p>
+        <div class="grid gap-4 sm:grid-cols-2">
+          {heroHighlights.map((highlight) => (
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-4 text-left shadow-inner shadow-black/40">
+              <p class="text-[0.65rem] uppercase tracking-[0.45em] text-amber-100/70">{highlight.label}</p>
+              <h3 class="mt-2 text-lg font-semibold text-white">{highlight.title}</h3>
+              <p class="text-sm text-amber-50/75">{highlight.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
-    <div class="cta-row">
-      <a class="button primary" href="mailto:kerehama@andrewstribe.co.nz">Email me</a>
-      <a class="button secondary" href="#spaces">Explore my spaces</a>
+  </section>
+
+  <section
+    id="about"
+    class="relative isolate overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-br from-[#160d07] via-[#08110d] to-[#030302] px-6 py-12 shadow-koru sm:px-10 sm:py-14 lg:px-16"
+  >
+    <div class="absolute inset-0 opacity-50">
+      <div class="absolute inset-y-0 right-0 w-1/3 bg-[radial-gradient(circle_at_20%_20%,rgba(250,204,21,0.45),transparent_60%)] blur-3xl"></div>
+      <div class="absolute inset-y-0 left-0 w-1/3 bg-[radial-gradient(circle_at_80%_40%,rgba(34,197,94,0.25),transparent_55%)] blur-3xl"></div>
+    </div>
+    <div class="relative grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+      <div class="space-y-4 text-amber-100/90">
+        <p class="text-xs font-semibold uppercase tracking-[0.45em] text-amber-200/70">About</p>
+        <h2 class="text-3xl font-semibold text-white sm:text-4xl">Kaupapa grounded in whānau, whenua, and future builds</h2>
+        <p class="text-base leading-relaxed text-amber-50/85">
+          Placeholder kōrero about our whānau kaupapa — keeping stories of Tauranga Moana close while shaping a business
+          that serves sport, tech, and media wānanga. Every project nods to whakapapa, making sure the mahi feels like
+          home.
+        </p>
+      </div>
+      <div class="space-y-6 rounded-3xl border border-white/10 bg-white/5 p-6 text-sm text-amber-50/80 shadow-inner shadow-black/40">
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="rounded-2xl border border-white/10 bg-black/30 p-4">
+            <p class="text-[0.65rem] uppercase tracking-[0.4em] text-amber-100/70">Whānau first</p>
+            <p class="mt-3 text-base text-white">Placeholder line about caring for aunties, cousins, and the wider hapori.</p>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-black/30 p-4">
+            <p class="text-[0.65rem] uppercase tracking-[0.4em] text-amber-100/70">Kaupapa mahi</p>
+            <p class="mt-3 text-base text-white">Business services stretch across media builds, sport support, and kura projects.</p>
+          </div>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-gradient-to-r from-[#1d140d]/70 to-[#07130f]/70 p-5">
+          <p class="text-[0.65rem] uppercase tracking-[0.4em] text-amber-100/70">Business focus</p>
+          <p class="mt-3 text-lg font-semibold text-white">Mahi that honours tikanga, looks sharp, and funds the next season.</p>
+          <p class="text-sm text-amber-50/80">Placeholder statement about weaving client work with internal experiments to sustain the whānau.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    id="portfolio"
+    class="rounded-[32px] border border-white/10 bg-[#070908]/95 px-6 py-12 shadow-koru sm:px-10 sm:py-14 lg:px-16"
+  >
+    <div class="flex flex-col gap-4 text-white">
+      <p class="text-xs font-semibold uppercase tracking-[0.45em] text-amber-200/70">Portfolio / Work</p>
+      <div class="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
+        <div>
+          <h2 class="text-3xl font-semibold sm:text-4xl">Mahi snapshots, concept decks, and placeholders</h2>
+          <p class="mt-3 text-base text-amber-50/85">
+            Quick look at builds in flight — stills, mockups, and wired frames holding space for the real thing.
+          </p>
+        </div>
+        <a
+          href="#connect"
+          class="inline-flex w-max items-center gap-2 rounded-full border border-amber-200/40 px-5 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-amber-100/80 transition hover:border-amber-200 hover:text-white"
+          >Whakapā</a
+        >
+      </div>
+    </div>
+    <div class="mt-10 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+      {portfolioItems.map((item) => (
+        <article class="group flex flex-col gap-4 rounded-3xl border border-white/10 bg-white/5 p-4 shadow-lg shadow-black/30">
+          <div class="relative h-40 overflow-hidden rounded-2xl bg-[radial-gradient(circle_at_30%_30%,rgba(249,115,22,0.35),transparent_70%)]">
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(34,197,94,0.2),transparent_60%)]"></div>
+            <div class="absolute inset-0 border border-white/10 opacity-60"></div>
+            <p class="absolute bottom-3 left-4 text-xs font-semibold uppercase tracking-[0.4em] text-amber-100/80">Image TBD</p>
+          </div>
+          <div class="space-y-2">
+            <h3 class="text-xl font-semibold text-white">{item.title}</h3>
+            <p class="text-sm text-amber-50/85">{item.body}</p>
+          </div>
+        </article>
+      ))}
     </div>
   </section>
 
@@ -133,4 +302,75 @@ const socials = [
       ))}
     </div>
   </section>
+
+  <section
+    id="contact-cta"
+    class="relative isolate overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-br from-[#140c08]/95 via-[#07130f]/95 to-[#020303] px-6 py-12 shadow-koru sm:px-10 sm:py-16 lg:px-16"
+  >
+    <div class="pointer-events-none absolute inset-0 opacity-70">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(250,204,21,0.18),transparent_55%)]"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_80%_30%,rgba(34,197,94,0.25),transparent_45%)]"></div>
+      <div class="absolute -right-10 -top-10 h-40 w-40 rounded-full border border-amber-200/30"></div>
+      <div class="absolute -bottom-12 left-1/4 h-32 w-32 rounded-full border border-lime-200/20"></div>
+    </div>
+    <div class="relative grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+      <div class="space-y-6 text-amber-50/85">
+        <p class="text-xs font-semibold uppercase tracking-[0.45em] text-amber-200/70">Contact / CTA</p>
+        <h2 class="text-3xl font-semibold text-white sm:text-4xl">Hold space on the calendar</h2>
+        <p class="text-base leading-relaxed">
+          Drop a short note about mahi you want to ship, kaupapa you want to back, or events that need design + sport
+          brains in the mix. We’ll reply through email first, then line up a quick wānanga.
+        </p>
+        <div class="flex flex-col gap-3 text-sm text-amber-100/70 sm:flex-row sm:items-center">
+          <div class="rounded-full border border-white/15 bg-white/5 px-5 py-2 font-semibold uppercase tracking-[0.35em] text-white">
+            Ready for kaupapa 2025
+          </div>
+          <p class="text-amber-50/70">Response within 24h · Tauranga Moana timezone</p>
+        </div>
+      </div>
+
+      <form class="space-y-4 rounded-3xl border border-white/15 bg-black/30 p-6 shadow-inner shadow-black/40">
+        <label class="flex flex-col gap-2 text-sm font-semibold uppercase tracking-[0.35em] text-amber-100/70">
+          Ingoa / Name
+          <input
+            type="text"
+            name="name"
+            required
+            placeholder="e.g. Ariana R."
+            class="rounded-2xl border border-white/20 bg-black/40 px-4 py-3 text-base text-white placeholder:text-amber-50/50 focus:border-amber-300 focus:outline-none focus:ring-2 focus:ring-amber-300/40"
+          />
+        </label>
+        <label class="flex flex-col gap-2 text-sm font-semibold uppercase tracking-[0.35em] text-amber-100/70">
+          Īmēra / Email
+          <input
+            type="email"
+            name="email"
+            required
+            placeholder="you@example.com"
+            class="rounded-2xl border border-white/20 bg-black/40 px-4 py-3 text-base text-white placeholder:text-amber-50/50 focus:border-amber-300 focus:outline-none focus:ring-2 focus:ring-amber-300/40"
+          />
+        </label>
+        <label class="flex flex-col gap-2 text-sm font-semibold uppercase tracking-[0.35em] text-amber-100/70">
+          Kōrero / Message
+          <textarea
+            name="message"
+            rows="5"
+            required
+            placeholder="Share the kaupapa, timelines, or what kind of help you need."
+            class="rounded-2xl border border-white/20 bg-black/40 px-4 py-3 text-base text-white placeholder:text-amber-50/50 focus:border-amber-300 focus:outline-none focus:ring-2 focus:ring-amber-300/40"
+          ></textarea>
+        </label>
+        <button
+          type="submit"
+          class="inline-flex w-full items-center justify-center rounded-2xl bg-gradient-to-r from-amber-400 to-lime-300 px-6 py-3 text-sm font-semibold uppercase tracking-[0.4em] text-slate-900 transition hover:from-amber-300 hover:to-lime-200"
+        >
+          Send the mahi
+        </button>
+        <p class="text-xs text-amber-100/60">
+          This placeholder form routes nowhere yet — it’s here to show intent until the real inbox hooks in.
+        </p>
+      </form>
+    </div>
+  </section>
+
 </BaseLayout>

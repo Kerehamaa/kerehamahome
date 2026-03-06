@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap');
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   color-scheme: dark;
   --bg: #040507;
@@ -97,37 +101,6 @@ section header h2 {
   line-height: 1.2;
 }
 
-.hero {
-  gap: 1.5rem;
-}
-
-.hero .eyebrow {
-  text-transform: uppercase;
-  font-size: 0.75rem;
-  letter-spacing: 0.25em;
-  color: var(--muted);
-  margin-bottom: 0.35rem;
-}
-
-.hero h1 {
-  font-size: clamp(2.6rem, 6vw, 4rem);
-  margin: 0;
-  line-height: 1.1;
-}
-
-.hero p.lede {
-  font-size: 1.15rem;
-  color: var(--muted);
-  max-width: 620px;
-  line-height: 1.7;
-}
-
-.cta-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 0.75rem;
-}
 
 .button {
   border: 1px solid var(--accent);
@@ -251,16 +224,12 @@ section header h2 {
 }
 
 footer {
-  border-top: 1px solid var(--card-border);
-  margin-top: 4rem;
-  padding: 2rem clamp(1.5rem, 4vw, 3rem) 3rem;
+  border-top: none;
+  margin-top: 5rem;
+  padding: 0 clamp(1.5rem, 4vw, 3rem) 0;
   font-size: 0.85rem;
   color: var(--muted);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
+  display: block;
 }
 
 nav {
@@ -395,41 +364,6 @@ nav a.brand:hover {
 }
 
 
-.monogram {
-  width: 80px;
-  height: 80px;
-  border-radius: 24px;
-  display: grid;
-  place-items: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.monogram span {
-  font-size: 2rem;
-  font-weight: 600;
-  letter-spacing: -0.05em;
-}
-
-.monogram span:last-child {
-  position: absolute;
-  transform: translate(8px, 10px);
-  opacity: 0.65;
-}
-
-.hero-mark {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.65rem;
-  margin-bottom: 1rem;
-  color: var(--muted);
-  font-size: 0.85rem;
-}
-
-.hero-mark span {
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-}
 
 @keyframes fade-up {
   from {
@@ -519,19 +453,6 @@ nav a.brand:hover {
   box-shadow: 0 0 12px rgba(249, 115, 22, 0.3);
 }
 
-/* typing cursor on eyebrow */
-.hero .eyebrow::after {
-  content: '|';
-  animation: blink 1s step-end infinite;
-  margin-left: 0.15em;
-  color: var(--accent);
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-
 /* section dividers */
 section + section::before {
   content: '';
@@ -575,28 +496,11 @@ section + section::before {
 
 /* mobile polish */
 @media (max-width: 480px) {
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .hero p.lede {
-    font-size: 1rem;
-  }
-
   .starmap {
     width: min(320px, 85vw);
     right: -0.5rem;
   }
 
-  .monogram {
-    width: 60px;
-    height: 60px;
-    border-radius: 18px;
-  }
-
-  .monogram span {
-    font-size: 1.6rem;
-  }
 }
 
 /* selection color */
@@ -629,27 +533,6 @@ button:focus-visible {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--muted);
-}
-
-/* hero subtle accent line */
-.hero::after {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 2px;
-  background: linear-gradient(90deg, var(--accent), transparent);
-  margin-top: 1.5rem;
-  border-radius: 2px;
-  opacity: 0.6;
-}
-
-/* smoother monogram */
-.monogram span {
-  transition: opacity 0.3s ease;
-}
-
-.hero-mark:hover .monogram span:last-child {
-  opacity: 1;
 }
 
 /* nav fade in */
