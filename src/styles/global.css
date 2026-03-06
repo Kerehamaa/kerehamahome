@@ -36,13 +36,14 @@ body::before {
   background: radial-gradient(circle at 30% 30%, rgba(249, 115, 22, 0.35), transparent 70%);
   filter: blur(120px);
   opacity: 0.45;
-  animation: float-pulse 18s ease-in-out infinite alternate;
+  animation: float-pulse 24s ease-in-out infinite alternate;
   pointer-events: none;
   z-index: 0;
 }
 
 a {
   color: inherit;
+  transition: color 0.2s ease;
 }
 
 a:hover {
@@ -69,7 +70,7 @@ section {
   gap: 1.25rem;
   opacity: 0;
   transform: translateY(24px);
-  animation: fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: fade-up 1.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 section:nth-of-type(1) { animation-delay: 0.05s; }
@@ -93,6 +94,7 @@ section header p.label {
 section header h2 {
   margin: 0;
   font-size: clamp(1.5rem, 4vw, 2.4rem);
+  line-height: 1.2;
 }
 
 .hero {
@@ -117,6 +119,7 @@ section header h2 {
   font-size: 1.15rem;
   color: var(--muted);
   max-width: 620px;
+  line-height: 1.7;
 }
 
 .cta-row {
@@ -176,14 +179,15 @@ section header h2 {
   display: flex;
   flex-direction: column;
   gap: 0.65rem;
-  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color 0.35s ease, transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease, background 0.35s ease;
   transform: translateY(0);
 }
 
 .card:hover {
   border-color: var(--accent);
-  transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(249, 115, 22, 0.15);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(249, 115, 22, 0.12);
+  background: linear-gradient(145deg, rgba(249, 115, 22, 0.04), rgba(255, 255, 255, 0));
 }
 
 .card .label {
@@ -198,6 +202,16 @@ section header h2 {
 
 .card p {
   margin: 0;
+  color: var(--muted);
+}
+
+.card p {
+  line-height: 1.6;
+}
+
+.list-item p {
+  margin: 0;
+  line-height: 1.6;
   color: var(--muted);
 }
 
@@ -262,6 +276,11 @@ nav a.brand {
   font-weight: 600;
   color: var(--fg);
   text-decoration: none;
+  transition: color 0.3s ease, letter-spacing 0.3s ease;
+}
+
+nav a.brand:hover {
+  letter-spacing: 0.05em;
 }
 
 /* ===== STAR MAP NAV ===== */
@@ -302,7 +321,7 @@ nav a.brand {
   opacity: 0;
   transform: translateY(-8px) scale(0.95);
   pointer-events: none;
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  transition: opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1), transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   z-index: 100;
 }
 
@@ -610,4 +629,40 @@ button:focus-visible {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--muted);
+}
+
+/* hero subtle accent line */
+.hero::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  margin-top: 1.5rem;
+  border-radius: 2px;
+  opacity: 0.6;
+}
+
+/* smoother monogram */
+.monogram span {
+  transition: opacity 0.3s ease;
+}
+
+.hero-mark:hover .monogram span:last-child {
+  opacity: 1;
+}
+
+/* nav fade in */
+nav {
+  animation: fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+/* footer fade */
+footer {
+  animation: fade-up 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 0.5s;
+  opacity: 0;
+  transform: translateY(20px);
 }
