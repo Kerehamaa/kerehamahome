@@ -2,13 +2,13 @@
 
 :root {
   color-scheme: dark;
-  --bg: #040507;
-  --bg-soft: #0b0d12;
-  --fg: #f8f7f2;
-  --muted: rgba(248, 247, 242, 0.65);
-  --accent: #f97316;
-  --accent-soft: rgba(249, 115, 22, 0.12);
-  --card-border: rgba(248, 247, 242, 0.08);
+  --bg: #0D0E10;
+  --bg-soft: #141617;
+  --fg: #FFFFFF;
+  --muted: #A9ACAF;
+  --accent: #FF6A2A;
+  --accent-soft: rgba(255, 106, 42, 0.12);
+  --card-border: rgba(255, 255, 255, 0.06);
 }
 
 html {
@@ -33,7 +33,7 @@ body::before {
   inset: -20% auto auto -25%;
   width: 60vw;
   height: 60vw;
-  background: radial-gradient(circle at 30% 30%, rgba(249, 115, 22, 0.35), transparent 70%);
+  background: radial-gradient(circle at 30% 30%, rgba(255, 106, 42, 0.25), transparent 70%);
   filter: blur(120px);
   opacity: 0.45;
   animation: float-pulse 18s ease-in-out infinite alternate;
@@ -177,7 +177,7 @@ section header h2 {
 .card:hover {
   border-color: var(--accent);
   transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(249, 115, 22, 0.15);
+  box-shadow: 0 10px 30px rgba(6, 182, 212, 0.15);
 }
 
 .card .label {
@@ -327,7 +327,7 @@ nav a.brand {
 
 .starmap a:hover .starmap-dot {
   fill: var(--accent);
-  filter: drop-shadow(0 0 8px rgba(249, 115, 22, 0.6));
+  filter: drop-shadow(0 0 8px rgba(6, 182, 212, 0.6));
 }
 
 .starmap a:hover .starmap-label {
