@@ -643,3 +643,23 @@ body::before {
 :root[data-theme="light"] .starmap a:hover .starmap-label {
   fill: var(--fg);
 }
+
+/* Light mode button border visibility */
+:root[data-theme="light"] .button {
+  border-color: rgba(26, 26, 26, 0.2);
+}
+
+:root[data-theme="light"] .button:hover {
+  border-color: var(--accent);
+}
+
+:root[data-theme="light"] .button.secondary {
+  border-color: rgba(26, 26, 26, 0.3);
+  color: var(--fg);
+}
+
+:root[data-theme="light"] .button.secondary:hover {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #ffffff;
+}
