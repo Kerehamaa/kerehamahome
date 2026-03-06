@@ -325,7 +325,7 @@ nav a.brand {
 }
 
 .starmap-label {
-  fill: transparent;
+  fill: var(--muted);
   font-size: 8px;
   font-family: 'Space Grotesk', system-ui, sans-serif;
   text-anchor: middle;
@@ -483,7 +483,7 @@ nav a.brand {
   top: 50%;
   left: 50%;
   width: 2px;
-  height: 7px;
+  height: 6px;
   background: var(--fg);
   border-radius: 1px;
   transform-origin: center center;
@@ -608,4 +608,38 @@ body, main, section, .card, .button, nav, footer {
 /* Smooth background gradient transition */
 body::before {
   transition: background 0.4s ease;
+}
+
+/* Light mode star map visibility fixes */
+:root[data-theme="light"] .starmap-line {
+  stroke: rgba(26, 26, 26, 0.2);
+}
+
+:root[data-theme="light"] .starmap-dot {
+  fill: rgba(26, 26, 26, 0.7);
+}
+
+:root[data-theme="light"] .starmap-dot.starmap-home {
+  filter: drop-shadow(0 0 6px rgba(26, 26, 26, 0.3));
+}
+
+:root[data-theme="light"] .starmap a:hover .starmap-dot {
+  filter: drop-shadow(0 0 8px rgba(6, 182, 212, 0.6));
+}
+
+:root[data-theme="light"] .starmap:hover .starmap-line,
+:root[data-theme="light"] .starmap a:hover ~ line {
+  stroke: rgba(26, 26, 26, 0.4);
+}
+
+:root[data-theme="light"] .starmap-label {
+  fill: var(--muted);
+}
+
+:root[data-theme="light"] .starmap-label-home {
+  fill: var(--fg);
+}
+
+:root[data-theme="light"] .starmap a:hover .starmap-label {
+  fill: var(--fg);
 }
