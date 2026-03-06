@@ -27,7 +27,39 @@ const {
   <body>
     <nav>
       <a href="/" class="brand">kerehama.nz</a>
-      <span class="status">online</span>
+      <div class="starmap" aria-label="Site map">
+        <svg viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+          <!-- lines from center to satellites -->
+          <line x1="100" y1="40" x2="30" y2="20" class="starmap-line" />
+          <line x1="100" y1="40" x2="40" y2="65" class="starmap-line" />
+          <line x1="100" y1="40" x2="170" y2="18" class="starmap-line" />
+          <line x1="100" y1="40" x2="165" y2="62" class="starmap-line" />
+
+          <!-- satellite dots -->
+          <a href="https://portfolio.kerehama.nz" target="_blank" rel="noopener">
+            <circle cx="30" cy="20" r="5" class="starmap-dot" />
+            <text x="30" y="10" class="starmap-label">portfolio</text>
+          </a>
+          <a href="https://lab.kerehama.nz" target="_blank" rel="noopener">
+            <circle cx="40" cy="65" r="5" class="starmap-dot" />
+            <text x="40" y="78" class="starmap-label">lab</text>
+          </a>
+          <a href="https://notes.kerehama.nz" target="_blank" rel="noopener">
+            <circle cx="170" cy="18" r="5" class="starmap-dot" />
+            <text x="170" y="8" class="starmap-label">notes</text>
+          </a>
+          <a href="#connect" class="starmap-internal">
+            <circle cx="165" cy="62" r="5" class="starmap-dot" />
+            <text x="165" y="75" class="starmap-label">connect</text>
+          </a>
+
+          <!-- center dot (home) -->
+          <a href="/">
+            <circle cx="100" cy="40" r="7" class="starmap-dot starmap-home" />
+            <text x="100" y="30" class="starmap-label starmap-label-home">kerehama.nz</text>
+          </a>
+        </svg>
+      </div>
     </nav>
 
     <main>
