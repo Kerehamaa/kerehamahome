@@ -11,6 +11,18 @@
   --card-border: rgba(255, 255, 255, 0.06);
 }
 
+/* Light mode */
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #FFFFFF;
+  --bg-soft: #F8F9FA;
+  --fg: #1A1A1A;
+  --muted: #6B7280;
+  --accent: #06b6d4;
+  --accent-soft: rgba(6, 182, 212, 0.12);
+  --card-border: rgba(0, 0, 0, 0.08);
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -410,4 +422,34 @@ nav a.brand {
   .card {
     transition: border-color 0.2s ease;
   }
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  background: transparent;
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 0.875rem;
+  padding: 0.5rem 0.75rem;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Adjust body gradient for light mode */
+:root[data-theme="light"] body::before {
+  background: radial-gradient(circle at 30% 30%, rgba(6, 182, 212, 0.15), transparent 70%);
+}
+
+/* Navigation controls */
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
