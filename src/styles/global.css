@@ -235,12 +235,6 @@ nav {
   color: var(--muted);
 }
 
-.brand-mark {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
 nav a.brand {
   font-weight: 600;
   color: var(--fg);
@@ -256,34 +250,23 @@ nav span.status {
   text-transform: uppercase;
 }
 
-.monogram {
-  width: 80px;
-  height: 80px;
-  border-radius: 24px;
-  border: 1px solid var(--card-border);
-  display: grid;
-  place-items: center;
-  position: relative;
-  overflow: hidden;
-  background: transparent;
-}
 
-.monogram span {
-  font-size: 2rem;
+.monogram {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.08em;
+  font-size: 2.4rem;
   font-weight: 600;
   letter-spacing: -0.05em;
 }
 
-.monogram span:last-child {
-  position: absolute;
-  transform: translate(8px, 10px);
-  opacity: 0.65;
+.monogram span {
+  font-size: inherit;
+  font-weight: inherit;
 }
 
-.monogram--small {
-  width: 44px;
-  height: 44px;
-  border-radius: 14px;
+.monogram span:last-child {
+  opacity: 0.65;
 }
 
 .hero-mark {
@@ -300,8 +283,8 @@ nav span.status {
   text-transform: uppercase;
 }
 
-.monogram--small span {
-  font-size: 1.2rem;
+.hero-mark .monogram {
+  font-size: 2.8rem;
 }
 
 @keyframes fade-up {
